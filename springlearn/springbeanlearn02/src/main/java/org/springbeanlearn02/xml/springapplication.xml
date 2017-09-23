@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 同样profile可以使用xml方式配置 -->
+	<beans profile="dev">
+		<bean id="datasourcein" class="org.springbeanlearn02.xml.StringBean1">
+			<constructor-arg name="name" value="dev"></constructor-arg>
+		</bean>
+	</beans>
+	
+	<beans profile="prod">
+		<bean id="datasourcein" class="org.springbeanlearn02.xml.StringBean2">
+			<constructor-arg name="name" value="prod"></constructor-arg>
+		</bean>
+	</beans>
+</beans>
