@@ -25,5 +25,7 @@
   <modules>
     <module>springbeanlearn01</module>
     <module>springbeanlearn02</module>
+    <module>springlearn03</module>
+    <module>spring04-webmvc</module>
   </modules>
 </project>
