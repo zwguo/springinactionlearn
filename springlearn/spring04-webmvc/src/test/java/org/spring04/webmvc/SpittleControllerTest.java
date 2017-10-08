@@ -15,6 +15,10 @@ import org.springframework.web.servlet.view.InternalResourceView;
 
 public class SpittleControllerTest {
 
+	/**
+	 * 对应的是无参数的spittles()方法，如测试要解开，并注释掉有参数的spittles(long, int)方法。
+	 * @throws Exception
+	 */
 	@Test
 	public void shouldShowRecentSpittles() throws Exception {
 		List<Spittle> expectedSpittles = createSpittleList(20);
@@ -29,6 +33,37 @@ public class SpittleControllerTest {
 		.andExpect(MockMvcResultMatchers.view().name("spittles"))
 		.andExpect(MockMvcResultMatchers.model().attributeExists("spittleList"))
 		.andExpect(MockMvcResultMatchers.model().attribute("spittleList", org.hamcrest.Matchers.hasItems(expectedSpittles.toArray())));
+	}
+	
+	@Test
+	public void shouldShowPagedSpittles() throws Exception {
+		List<Spittle> expectedSpittles = createSpittleList(50);
+		SpittleRepository mockRespository = Mockito.mock(SpittleRepository.class);
+		Mockito.when(mockRespository.findSpittles(238900, 50)).thenReturn(expectedSpittles);
+		
+		SpittleController controller = new SpittleController(mockRespository);
+		MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).setSingleView(new InternalResourceView("/WEB-INF/views/spittles.jsp")).build();
+		
+		mockMvc.perform(MockMvcRequestBuilders.get("/spittles?max=238900&count=50"))
+		.andExpect(MockMvcResultMatchers.view().name("spittles"))
+		.andExpect(MockMvcResultMatchers.model().attributeExists("spittleList"))
+		.andExpect(MockMvcResultMatchers.model().attribute("spittleList", org.hamcrest.Matchers.hasItems(expectedSpittles.toArray())));
+		
+	}
+	
+	@Test
+	public void testSpittle() throws Exception{
+		Spittle expectedSpittle = new Spittle("Hello", new Date());
+		SpittleRepository mockRepository = Mockito.mock(SpittleRepository.class);
+		Mockito.when(mockRepository.findOne(12345)).thenReturn(expectedSpittle);
+		
+		SpittleController controller = new SpittleController(mockRepository);
+		MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+		
+		mockMvc.perform(MockMvcRequestBuilders.get("/spittles/12345"))
+		.andExpect(MockMvcResultMatchers.view().name("spittle"))
+		.andExpect(MockMvcResultMatchers.model().attributeExists("spittle"))
+		.andExpect(MockMvcResultMatchers.model().attribute("spittle", expectedSpittle));
 	}
 
 	private List<Spittle> createSpittleList(int count) {

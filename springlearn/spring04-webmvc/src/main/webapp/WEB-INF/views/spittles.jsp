@@ -9,9 +9,9 @@
 </head>
 <body>
 	<c:forEach items="${spittleList}" var="spittle">
-		<li id='spittle_<c:out value="spittle.id"/>'>
+		<li id="spittle_<c:out value="${spittle.id}"/>">
 			<div classs="spittleMessage">
-				<c:out value="{spittle.message}"></c:out>
+				<c:out value="${spittle.message}"></c:out>
 			</div>
 			<div>
 				<span classs="spittleTime"><c:out value="${spittle.time}"></c:out></span>
