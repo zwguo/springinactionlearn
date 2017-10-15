@@ -27,5 +27,7 @@
     <module>springbeanlearn02</module>
     <module>springlearn03</module>
     <module>spring04-webmvc</module>
+    <module>spring05-jsp</module>
+    <module>spring06-webmvc-senior</module>
   </modules>
 </project>

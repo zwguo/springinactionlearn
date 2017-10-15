@@ -1,5 +1,8 @@
 package org.spring04.webmvc;
 
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 /**
@@ -15,6 +18,12 @@ public class SpittrWebAppInitializer extends AbstractAnnotationConfigDispatcherS
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 		return new Class[] {RootConfig.class};
+	}
+
+	@Override
+	public void onStartup(ServletContext servletContext) throws ServletException {
+		System.out.println("----SpittrWebAppInitializer----");
+		super.onStartup(servletContext);
 	}
 
 	/**
