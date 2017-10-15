@@ -7,6 +7,10 @@
 <title>Hello</title>
 </head>
 <body>
-	欢迎~
+	<h1>欢迎~</h1>
+	<form action="upload2" enctype="multipart/form-data" method="post">
+		<input type="file" name="img" value="选择图片" accept="image/jpeg,image/png,image/gif"/>
+		<input type="submit" value="上传"/>
+	</form>
 </body>
 </html>

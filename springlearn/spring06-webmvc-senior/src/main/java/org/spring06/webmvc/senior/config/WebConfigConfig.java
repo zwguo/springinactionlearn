@@ -27,5 +27,4 @@ public class WebConfigConfig extends WebMvcConfigurerAdapter{
 		viewResolver.setExposeContextBeansAsAttributes(true);
 		return viewResolver;
 	}
-
 }
