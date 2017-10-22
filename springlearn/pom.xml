@@ -31,5 +31,6 @@
     <module>spring06-webmvc-senior</module>
     <module>spring07-webflow</module>
     <module>spring09-security</module>
+    <module>spring10-jdbc</module>
   </modules>
 </project>
