@@ -32,5 +32,6 @@
     <module>spring07-webflow</module>
     <module>spring09-security</module>
     <module>spring10-jdbc</module>
+    <module>spring11-hibernate</module>
   </modules>
 </project>
