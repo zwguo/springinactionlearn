@@ -33,5 +33,6 @@
     <module>spring09-security</module>
     <module>spring10-jdbc</module>
     <module>spring11-hibernate</module>
+    <module>spring12-redisnotwebconnect</module>
   </modules>
 </project>
