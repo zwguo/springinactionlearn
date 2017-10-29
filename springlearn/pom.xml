@@ -34,5 +34,6 @@
     <module>spring10-jdbc</module>
     <module>spring11-hibernate</module>
     <module>spring12-redisnotwebconnect</module>
+    <module>spring13-cache</module>
   </modules>
 </project>
