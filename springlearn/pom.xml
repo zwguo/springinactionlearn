@@ -35,5 +35,6 @@
     <module>spring11-hibernate</module>
     <module>spring12-redisnotwebconnect</module>
     <module>spring13-cache</module>
+    <module>spring14-methodsecurity</module>
   </modules>
 </project>
