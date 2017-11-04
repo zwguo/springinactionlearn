@@ -36,5 +36,6 @@
     <module>spring12-redisnotwebconnect</module>
     <module>spring13-cache</module>
     <module>spring14-methodsecurity</module>
+    <module>spring15-rmi</module>
   </modules>
 </project>
