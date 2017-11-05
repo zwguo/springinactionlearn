@@ -37,5 +37,6 @@
     <module>spring13-cache</module>
     <module>spring14-methodsecurity</module>
     <module>spring15-rmi</module>
+    <module>spring16-rest</module>
   </modules>
 </project>
