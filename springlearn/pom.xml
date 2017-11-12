@@ -38,5 +38,7 @@
     <module>spring14-methodsecurity</module>
     <module>spring15-rmi</module>
     <module>spring16-rest</module>
+    <module>spring17-jms</module>
+    <module>spring19-mail</module>
   </modules>
 </project>
