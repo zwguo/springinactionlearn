@@ -41,5 +41,6 @@
     <module>spring17-jms</module>
     <module>spring19-mail</module>
     <module>spring20-jmx</module>
+    <module>spring17-jms-rabbitmq</module>
   </modules>
 </project>
